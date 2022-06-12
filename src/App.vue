@@ -1,22 +1,28 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import Header from './components/Header.vue'
+import SidebarSmall from './components/SidebarSmall.vue'
+import Sidebar from './components/Sidebar.vue'
+import SidebarMobile from './components/SidebarMobile.vue'
+import Categories from './components/Categories.vue'
+import Videos from './components/Videos.vue'
+
+export default {
+  components: {
+    Header,
+    SidebarSmall,
+    Sidebar,
+    SidebarMobile,
+    Categories,
+    Videos
+  }
+}
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <Header />
+  <SidebarSmall />
+  <Sidebar />
+  <SidebarMobile />
+  <Categories />
+  <Videos />
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
