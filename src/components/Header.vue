@@ -31,6 +31,8 @@
         <BaseIcon name="dotsVertical" class="w-5 h-5" />
         <DropdownSettings />
       </button>
+      <DropdownApps />
+      <DropdownSettings />
       <LoginButton />
     </div>
   </header>
