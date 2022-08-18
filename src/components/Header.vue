@@ -1,6 +1,12 @@
 <template>
-	<header class="flex justify-between fixed z-30 w-full bg-white">
-    <div class="flex lg:w-1/4">
+	<header :class="classes">
+    <div 
+      :class="[
+        'lg:w-1/4',
+        'flex',
+        isMobileSearchShown ? 'opacity-0' : 'opacity-100'
+      ]"
+    >
       <div class="flex items-center xl:w-64 xl:bg-white pl-4">
         <button @click="$emit('toggleSidebar')"
                 class="mr-3 sm:ml-2 sm:mr-6 focus:outline-none"
@@ -19,7 +25,18 @@
         </button>
       </BaseTooltip>
     </div>
-    <div class="flex items-center justify-end lg:w-1/4 space-x-3 p-2 sm:px-4">
+    <div 
+      :class="[
+        'flex',
+        'items-center',
+        'justify-end',
+        'lg:w-1/4',
+        'space-x-3',
+        'p-2',
+        'sm:px-4',
+        isMobileSearchShown ? 'opacity-0' : 'opacity-100'
+      ]"
+    >
       <BaseTooltip text="Search with your voice">
         <button class="sm:hidden p-2 focus:outline-none">
           <BaseIcon name="microphone" class="w-5 h-5" />
@@ -75,7 +92,14 @@ export default {
   data () {
     return {
       isSmallScreen: false,
-      isMobileSearchActive: false
+      isMobileSearchActive: false,
+      classes: [
+        'flex',
+        'justify-between',
+        'w-full',
+        'bg-white',
+        'bg-opacity-95',
+      ]
     }
   },
 
