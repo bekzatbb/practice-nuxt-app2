@@ -1,11 +1,13 @@
 <template>
-  <Header @toggle-sidebar="toggleSidebar" />
+  <div class="fixed w-full z-30">
+    <Header @toggle-sidebar="toggleSidebar" />
+    <Categories :is-sidebar-open="isSidebarOpen" />
+  </div>
   <SidebarCompact v-if="isCompactSidebarOpen" />
   <Sidebar v-if="isSidebarOpen" />
   <SidebarMobile :is-open="isMobileSidebarOpen"
                  @close="closeMobileSidebar"
   />
-  <Categories :is-sidebar-open="isSidebarOpen" />
   <Videos :is-sidebar-open="isSidebarOpen" />
 </template>
 
